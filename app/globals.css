@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #0f172a;
+  color: #ffffff;
+}
+
+::selection {
+  background-color: #3b82f6;
+  color: #ffffff;
+}
+
+@layer components {
+  .section-container {
+    @apply mx-auto max-w-6xl px-6 sm:px-8;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-full bg-accent px-8 py-3.5 text-sm font-semibold text-white shadow-lg shadow-accent/20 transition-all duration-300 hover:bg-accent-light hover:shadow-accent/40 hover:-translate-y-0.5 active:translate-y-0;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 text-sm font-semibold text-white/80 transition-colors duration-300 hover:text-white;
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 hover:-translate-y-1.5 hover:border-accent/40 hover:shadow-2xl hover:shadow-accent/10;
+  }
+}
