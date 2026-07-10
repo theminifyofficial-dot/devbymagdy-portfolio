@@ -10,11 +10,6 @@ export default function Hero() {
       </div>
 
       <div className="section-container flex flex-col items-center py-24 text-center">
-        <div className="animate-fade-in-up mb-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs font-medium text-white/70">
-          <span className="h-1.5 w-1.5 rounded-full bg-accent" />
-          Available for new projects — Cairo, Egypt
-        </div>
-
         <h1 className="animate-fade-in-up max-w-3xl text-4xl font-bold leading-[1.1] tracking-tight text-white sm:text-5xl md:text-6xl">
           Websites That Actually{" "}
           <span className="bg-gradient-to-r from-accent to-accent-light bg-clip-text text-transparent">
