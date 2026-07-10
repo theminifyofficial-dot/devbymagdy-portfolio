@@ -18,8 +18,7 @@ export default function Hero() {
         </h1>
 
         <p className="animate-fade-in-up mt-6 max-w-xl text-balance text-lg text-white/60 sm:text-xl">
-          I build websites for Egyptian and international brands — and make
-          sure they look the part.
+          Websites shaped around your brand, your vision, and your customers.
         </p>
 
         <div className="animate-fade-in-up mt-10 flex flex-col items-center gap-4 sm:flex-row">
