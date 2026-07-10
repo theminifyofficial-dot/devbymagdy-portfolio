@@ -31,11 +31,12 @@ export default function Navbar() {
       }`}
     >
       <nav className="section-container flex h-20 items-center justify-between py-4">
-        <a
-          href="#top"
-          className="text-lg font-bold tracking-tight text-white"
-        >
-          devby<span className="text-accent">magdy</span>
+        <a href="#top" className="flex items-center">
+          <img
+            src="/logo.svg"
+            alt="devbymagdy"
+            className="h-9 w-auto sm:h-10"
+          />
         </a>
 
         <ul className="hidden items-center gap-8 md:flex">

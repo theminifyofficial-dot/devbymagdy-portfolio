@@ -10,11 +10,11 @@ export default function Footer() {
   return (
     <footer className="border-t border-white/10 py-12">
       <div className="section-container flex flex-col items-center gap-8 sm:flex-row sm:items-start sm:justify-between">
-        <div className="text-center sm:text-left">
-          <a href="#top" className="text-lg font-bold tracking-tight text-white">
-            devby<span className="text-accent">magdy</span>
+        <div className="flex flex-col items-center sm:items-start">
+          <a href="#top" className="flex items-center">
+            <img src="/logo.svg" alt="devbymagdy" className="h-9 w-auto" />
           </a>
-          <p className="mt-2 text-sm text-white/50">
+          <p className="mt-3 text-sm text-white/50">
             Building brands that sell.
           </p>
         </div>
