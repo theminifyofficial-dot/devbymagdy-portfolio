@@ -12,18 +12,16 @@ export default function MobileDemo() {
   };
 
   return (
-    <div className="mt-6 grid gap-8 rounded-2xl border border-white/10 bg-navy-light/50 p-8 sm:p-10 md:grid-cols-2 md:items-center">
+    <div className="mt-6 grid gap-8 rounded-3xl bg-white p-8 shadow-lg shadow-slate-900/5 sm:p-10 md:grid-cols-2 md:items-center">
       <div>
-        <h3 className="text-xl font-semibold text-white">
-          See It On Mobile
-        </h3>
-        <p className="mt-3 text-white/60">
+        <h3 className="text-xl font-bold text-navy">See It On Mobile</h3>
+        <p className="mt-3 text-navy/60">
           A real screen recording of the YASSYS storefront on mobile —
           browsing, product pages, and the checkout flow in action.
         </p>
       </div>
 
-      <div className="relative mx-auto aspect-[9/16] w-full max-w-[260px] overflow-hidden rounded-2xl border border-white/10 bg-navy">
+      <div className="relative mx-auto aspect-[9/16] w-full max-w-[260px] overflow-hidden rounded-2xl bg-navy shadow-md">
         <video
           ref={videoRef}
           src="/yassys-mobile-demo.mp4"

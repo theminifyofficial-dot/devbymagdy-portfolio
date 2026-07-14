@@ -26,7 +26,7 @@ export default function Navbar() {
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-navy/80 backdrop-blur-md shadow-lg shadow-black/20"
+          ? "bg-white/80 backdrop-blur-md shadow-md shadow-slate-900/5"
           : "bg-transparent"
       }`}
     >
@@ -44,7 +44,7 @@ export default function Navbar() {
             <li key={link.href}>
               <a
                 href={link.href}
-                className="text-sm font-medium text-white/70 transition-colors duration-200 hover:text-white"
+                className="text-sm font-medium text-navy/70 transition-colors duration-200 hover:text-navy"
               >
                 {link.label}
               </a>
@@ -59,7 +59,7 @@ export default function Navbar() {
         <button
           type="button"
           onClick={() => setMenuOpen((open) => !open)}
-          className="flex h-10 w-10 items-center justify-center rounded-full text-white transition-colors hover:bg-white/10 md:hidden"
+          className="flex h-10 w-10 items-center justify-center rounded-full text-navy transition-colors hover:bg-navy/5 md:hidden"
           aria-label="Toggle menu"
           aria-expanded={menuOpen}
         >
@@ -82,16 +82,16 @@ export default function Navbar() {
 
       <div
         className={`overflow-hidden transition-all duration-300 md:hidden ${
-          menuOpen ? "max-h-80 border-t border-white/10" : "max-h-0"
+          menuOpen ? "max-h-80 border-t border-slate-200" : "max-h-0"
         }`}
       >
-        <ul className="section-container flex flex-col gap-1 bg-navy/95 py-4 backdrop-blur-md">
+        <ul className="section-container flex flex-col gap-1 bg-white/95 py-4 backdrop-blur-md">
           {NAV_LINKS.map((link) => (
             <li key={link.href}>
               <a
                 href={link.href}
                 onClick={handleLinkClick}
-                className="block rounded-lg px-3 py-3 text-base font-medium text-white/80 transition-colors hover:bg-white/5 hover:text-white"
+                className="block rounded-lg px-3 py-3 text-base font-medium text-navy/80 transition-colors hover:bg-navy/5 hover:text-navy"
               >
                 {link.label}
               </a>

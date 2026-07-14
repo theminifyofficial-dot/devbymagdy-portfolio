@@ -1,3 +1,5 @@
+import Reveal from "./Reveal";
+
 const SERVICES = [
   {
     icon: (
@@ -10,6 +12,7 @@ const SERVICES = [
     title: "Shopify Theme Customization",
     description:
       "Transform your theme into a premium brand experience. Custom sections, sticky cart, size guide, shipping bar, and full mobile optimization.",
+    topBar: "bg-accent",
   },
   {
     icon: (
@@ -22,6 +25,7 @@ const SERVICES = [
     title: "Custom Web Development",
     description:
       "Landing pages, brand sites, and portfolio websites built clean and fast. Hosted on Vercel with auto-deploy.",
+    topBar: "bg-purple",
   },
   {
     icon: (
@@ -34,6 +38,7 @@ const SERVICES = [
     title: "Full Package",
     description:
       "Store build + traffic strategy. For brands serious about scaling.",
+    topBar: "bg-gradient-to-r from-accent to-purple",
   },
 ];
 
@@ -41,38 +46,40 @@ export default function Services() {
   return (
     <section id="services" className="py-24 sm:py-32">
       <div className="section-container">
-        <div className="mb-16 text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
+        <Reveal className="mb-16 text-center">
+          <h2 className="text-4xl font-extrabold tracking-tight text-navy sm:text-5xl">
             What I Build
           </h2>
-          <p className="mt-4 text-lg text-white/60">
+          <p className="mt-4 text-lg text-navy/60">
             Focused services, built for brands that want results.
           </p>
-        </div>
+        </Reveal>
 
-        <div className="grid gap-6 md:grid-cols-3">
-          {SERVICES.map((service) => (
-            <div
-              key={service.title}
-              className="card-hover group rounded-2xl border border-white/10 bg-navy-light/50 p-8"
-            >
-              <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-xl bg-accent/10 text-accent transition-colors duration-300 group-hover:bg-accent group-hover:text-white">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={1.5}
-                  stroke="currentColor"
-                  className="h-6 w-6"
-                >
-                  {service.icon}
-                </svg>
+        <div className="grid gap-8 md:grid-cols-3">
+          {SERVICES.map((service, index) => (
+            <Reveal key={service.title} delay={index * 100}>
+              <div className="card-hover group overflow-hidden rounded-2xl bg-white shadow-md shadow-slate-900/5">
+                <div className={`h-1.5 w-full ${service.topBar}`} />
+                <div className="p-8">
+                  <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-xl bg-accent/10 text-accent transition-colors duration-300 group-hover:bg-accent group-hover:text-white">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth={1.5}
+                      stroke="currentColor"
+                      className="h-6 w-6"
+                    >
+                      {service.icon}
+                    </svg>
+                  </div>
+                  <h3 className="mb-3 text-xl font-semibold text-navy">
+                    {service.title}
+                  </h3>
+                  <p className="text-navy/60">{service.description}</p>
+                </div>
               </div>
-              <h3 className="mb-3 text-xl font-semibold text-white">
-                {service.title}
-              </h3>
-              <p className="text-white/60">{service.description}</p>
-            </div>
+            </Reveal>
           ))}
         </div>
       </div>
