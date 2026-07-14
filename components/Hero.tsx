@@ -42,8 +42,7 @@ export default function Hero() {
 
         <Reveal delay={100}>
           <p className="mt-6 max-w-xl text-balance text-lg text-navy/60 sm:text-xl">
-            I build websites for Egyptian and international brands — and make
-            sure they look the part.
+            Websites shaped around your brand, your vision, and your customers.
           </p>
         </Reveal>
 
