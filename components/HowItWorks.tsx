@@ -1,67 +1,52 @@
-import Reveal from "./Reveal";
-
 const STEPS = [
   {
-    number: "01",
-    title: "Book a free 30-min call",
-    description: "Tell me about your brand and what you're trying to build.",
-    color: "text-accent",
+    title: "A free 30 minute call",
+    description: "You tell me about the brand and what you are trying to build.",
   },
   {
-    number: "02",
-    title: "I audit your current store",
-    description: "If you already have a store, I review what's working and what isn't.",
-    color: "text-purple",
+    title: "I review what you already have",
+    description:
+      "If a store or site is already running, I go through what works and what is costing you sales.",
   },
   {
-    number: "03",
-    title: "I build, you review in real time",
-    description: "You stay in the loop with progress updates as the work happens.",
-    color: "text-accent",
+    title: "I build, you watch it happen",
+    description:
+      "Progress goes up as it is made, so you can react early rather than at handover.",
   },
   {
-    number: "04",
-    title: "We launch and you get results",
-    description: "Live, tested, and ready to convert visitors into customers.",
-    color: "text-purple",
+    title: "We launch",
+    description: "Tested on real devices, checked, and handed over live.",
   },
 ];
 
+/* Numbered because this genuinely is a sequence, not for decoration. */
 export default function HowItWorks() {
   return (
-    <section id="how-it-works" className="bg-white py-24 sm:py-32">
+    <section id="how-it-works" className="bg-paper py-24 sm:py-32">
       <div className="section-container">
-        <Reveal className="mb-20 text-center">
-          <h2 className="text-4xl font-extrabold tracking-tight text-navy sm:text-5xl">
-            How We Work Together
-          </h2>
-          <p className="mt-4 text-lg text-navy/60">
-            A simple, transparent process from first call to launch.
-          </p>
-        </Reveal>
+        <h2 className="display-lg max-w-2xl">How the work runs</h2>
+        <p className="prose-body mt-4 max-w-prose">
+          From first call to launch day.
+        </p>
 
-        <div className="grid gap-12 md:grid-cols-4 md:gap-8">
+        <ol className="mt-16 flex flex-col">
           {STEPS.map((step, index) => (
-            <Reveal key={step.number} delay={index * 100}>
-              <div className="relative">
-                {index < STEPS.length - 1 && (
-                  <div className="absolute left-0 top-9 hidden w-full translate-x-1/2 border-t-2 border-dashed border-navy/15 md:block" />
-                )}
-                <div className="relative flex flex-col">
-                  <span
-                    className={`text-6xl font-extrabold leading-none ${step.color} opacity-20 sm:text-7xl`}
-                  >
-                    {step.number}
-                  </span>
-                  <h3 className="-mt-3 mb-2 text-lg font-semibold text-navy">
-                    {step.title}
-                  </h3>
-                  <p className="text-sm text-navy/60">{step.description}</p>
-                </div>
-              </div>
-            </Reveal>
+            <li
+              key={step.title}
+              className="hairline grid gap-2 py-8 sm:grid-cols-[3.5rem_1fr] sm:gap-8 lg:grid-cols-[3.5rem_20rem_1fr]"
+            >
+              <span className="font-display text-sm font-semibold tracking-tight text-moss">
+                {String(index + 1).padStart(2, "0")}
+              </span>
+              <h3 className="font-display sm:col-start-2 lg:row-start-1 text-lg font-bold tracking-[-0.02em] text-ink">
+                {step.title}
+              </h3>
+              <p className="prose-body sm:col-start-2 lg:col-start-3 lg:row-start-1 max-w-prose text-base">
+                {step.description}
+              </p>
+            </li>
           ))}
-        </div>
+        </ol>
       </div>
     </section>
   );

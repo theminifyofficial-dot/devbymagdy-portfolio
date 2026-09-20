@@ -1,57 +1,96 @@
-const FOOTER_LINKS = [
-  { label: "Services", href: "#services" },
-  { label: "Portfolio", href: "#portfolio" },
-  { label: "Book a Call", href: "#booking" },
+import Link from "next/link";
+import Wordmark from "./Wordmark";
+
+const SITE_LINKS = [
+  { label: "Work", href: "/#work" },
+  { label: "Services", href: "/#services" },
+  { label: "Process", href: "/#how-it-works" },
+  { label: "Contact", href: "/#contact" },
+];
+
+const LEGAL_LINKS = [
+  { label: "Privacy policy", href: "/privacy" },
+  { label: "Terms and conditions", href: "/terms" },
 ];
 
 export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-slate-200 bg-white py-12">
-      <div className="section-container flex flex-col items-center gap-8 sm:flex-row sm:items-start sm:justify-between">
-        <div className="flex flex-col items-center sm:items-start">
-          <a href="#top" className="flex items-center">
-            <img src="/logo.svg" alt="devbymagdy" className="h-9 w-auto" />
-          </a>
-          <p className="mt-3 text-sm text-navy/50">
-            Building brands that sell.
-          </p>
-        </div>
+    <footer className="border-t border-rule bg-paper py-14">
+      <div className="section-container">
+        <div className="grid gap-10 sm:grid-cols-3">
+          <div>
+            <Wordmark className="text-lg" />
+            <p className="prose-body mt-4 max-w-xs text-sm">
+              Custom Shopify themes and websites, built in Cairo.
+            </p>
+          </div>
 
-        <ul className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
-          {FOOTER_LINKS.map((link) => (
-            <li key={link.href}>
+          <nav aria-label="Site">
+            <ul className="flex flex-col gap-2.5">
+              {SITE_LINKS.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="font-display text-sm font-medium tracking-tight text-graphite transition-colors duration-200 ease-out-strong hover:text-ink"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+
+          <ul className="flex flex-col gap-2.5">
+            <li>
               <a
-                href={link.href}
-                className="text-sm text-navy/60 transition-colors hover:text-navy"
+                href="https://wa.me/201099032110"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-display text-sm font-medium tracking-tight text-graphite transition-colors duration-200 ease-out-strong hover:text-ink"
               >
-                {link.label}
+                WhatsApp
               </a>
             </li>
-          ))}
-        </ul>
-
-        <div className="flex flex-col items-center gap-2 text-sm text-navy/60 sm:items-end">
-          <a
-            href="mailto:magdy5613@gmail.com"
-            className="transition-colors hover:text-navy"
-          >
-            magdy5613@gmail.com
-          </a>
-          <a
-            href="https://instagram.com/devbymagdy"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="transition-colors hover:text-navy"
-          >
-            @devbymagdy
-          </a>
+            <li>
+              <a
+                href="mailto:magdy5613@gmail.com"
+                className="font-display break-all text-sm font-medium tracking-tight text-graphite transition-colors duration-200 ease-out-strong hover:text-ink"
+              >
+                magdy5613@gmail.com
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://instagram.com/devbymagdy"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-display text-sm font-medium tracking-tight text-graphite transition-colors duration-200 ease-out-strong hover:text-ink"
+              >
+                Instagram
+              </a>
+            </li>
+          </ul>
         </div>
-      </div>
 
-      <div className="section-container mt-10 border-t border-slate-100 pt-6 text-center text-xs text-navy/40">
-        © {year} devbymagdy. All rights reserved.
+        <div className="hairline mt-12 flex flex-col gap-4 pt-6 sm:flex-row sm:items-center sm:justify-between">
+          <p className="prose-body text-xs">
+            {year} devbymagdy. Mahmoud Magdy.
+          </p>
+          <ul className="flex flex-wrap gap-6">
+            {LEGAL_LINKS.map((link) => (
+              <li key={link.href}>
+                <Link
+                  href={link.href}
+                  className="font-display text-xs font-medium tracking-tight text-graphite transition-colors duration-200 ease-out-strong hover:text-ink"
+                >
+                  {link.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </footer>
   );

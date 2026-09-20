@@ -8,37 +8,35 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        navy: "#0F172A",
-        "navy-light": "#1E293B",
-        accent: "#3B82F6",
-        "accent-light": "#60A5FA",
-        purple: "#8B5CF6",
-        "purple-light": "#A78BFA",
-        paper: "#F8FAFC",
-        mist: "#EFF6FF",
+        // Gallery framing: the chassis stays neutral so client storefronts
+        // supply the colour. Accent is reserved for interactive elements.
+        paper: "#F7F6F2",
+        ink: "#000000",
+        graphite: "#4A4A45",
+        // Deep green reads commerce without borrowing Shopify's own mint.
+        // 9.1:1 on paper and 8.9:1 under white, so it is AA at any size.
+        moss: "#0E4F32",
+        "moss-deep": "#0A3B25",
+        rule: "#DCDAD2",
       },
       fontFamily: {
-        sans: ["var(--font-inter)", "system-ui", "sans-serif"],
+        display: ["var(--font-display)", "sans-serif"],
+        body: ["var(--font-body)", "Georgia", "serif"],
       },
-      animation: {
-        "fade-in": "fadeIn 0.8s ease-out forwards",
-        "fade-in-up": "fadeInUp 0.8s ease-out forwards",
-        float: "float 6s ease-in-out infinite",
-        "float-slow": "float 9s ease-in-out infinite",
+      maxWidth: {
+        prose: "68ch",
+      },
+      transitionTimingFunction: {
+        "out-strong": "cubic-bezier(0.23, 1, 0.32, 1)",
       },
       keyframes: {
-        fadeIn: {
-          "0%": { opacity: "0" },
-          "100%": { opacity: "1" },
-        },
-        fadeInUp: {
-          "0%": { opacity: "0", transform: "translateY(20px)" },
+        riseIn: {
+          "0%": { opacity: "0", transform: "translateY(12px)" },
           "100%": { opacity: "1", transform: "translateY(0)" },
         },
-        float: {
-          "0%, 100%": { transform: "translateY(0) rotate(0deg)" },
-          "50%": { transform: "translateY(-16px) rotate(6deg)" },
-        },
+      },
+      animation: {
+        "rise-in": "riseIn 600ms cubic-bezier(0.23, 1, 0.32, 1) both",
       },
     },
   },

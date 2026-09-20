@@ -1,85 +1,53 @@
-import Reveal from "./Reveal";
-
 const SERVICES = [
   {
-    icon: (
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        d="M9 3.75H6.912a2.25 2.25 0 00-2.15 1.588L2.35 13.177a2.25 2.25 0 00-.1.661V18a2.25 2.25 0 002.25 2.25h15.5A2.25 2.25 0 0022.25 18v-4.162c0-.224-.034-.447-.1-.661L20.24 5.338a2.25 2.25 0 00-2.15-1.588H15M9 3.75V16.5m0-12.75h6M2.25 13.5h5.379c.621 0 1.19.35 1.469.905l.606 1.212a1.636 1.636 0 001.469.906h2.554c.622 0 1.19-.35 1.47-.906l.605-1.212a1.636 1.636 0 011.47-.905h5.378"
-      />
-    ),
-    title: "Shopify Theme Customization",
+    title: "Custom web development",
     description:
-      "Transform your theme into a premium brand experience. Custom sections, sticky cart, size guide, shipping bar, and full mobile optimization.",
-    topBar: "bg-accent",
+      "Landing pages, brand sites and portfolios for businesses that need to be live fast. Hosted on Vercel with automatic deploys.",
+    scope: ["Landing pages", "Brand sites", "Portfolios"],
   },
   {
-    icon: (
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5"
-      />
-    ),
-    title: "Custom Web Development",
+    title: "Shopify theme work",
     description:
-      "Landing pages, brand sites, and portfolio websites built clean and fast. Hosted on Vercel with auto-deploy.",
-    topBar: "bg-purple",
+      "For stores outgrowing their theme. Custom sections, sticky cart, size guides and shipping bars, tuned for mobile first.",
+    scope: ["Custom sections", "Sticky cart", "Speed and mobile tuning"],
   },
   {
-    icon: (
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        d="M2.25 18L9 11.25l4.306 4.306a11.95 11.95 0 015.814-5.518l2.74-1.22m0 0l-5.94-2.281m5.94 2.28l-2.28 5.941"
-      />
-    ),
-    title: "Full Package",
+    title: "Store build and launch",
     description:
-      "Store build + traffic strategy. For brands serious about scaling.",
-    topBar: "bg-gradient-to-r from-accent to-purple",
+      "The full storefront from empty Shopify admin to launch day, including product setup, theme build and go live checks.",
+    scope: ["Theme build", "Product setup", "Launch checks"],
   },
 ];
 
 export default function Services() {
   return (
-    <section id="services" className="py-24 sm:py-32">
+    <section id="services" className="bg-white py-24 sm:py-32">
       <div className="section-container">
-        <Reveal className="mb-16 text-center">
-          <h2 className="text-4xl font-extrabold tracking-tight text-navy sm:text-5xl">
-            What I Build
-          </h2>
-          <p className="mt-4 text-lg text-navy/60">
-            Focused services, built for brands that want results.
-          </p>
-        </Reveal>
+        <h2 className="display-lg max-w-2xl">What I build</h2>
+        <p className="prose-body mt-4 max-w-prose">
+          Three ways to work together.
+        </p>
 
-        <div className="grid gap-8 md:grid-cols-3">
-          {SERVICES.map((service, index) => (
-            <Reveal key={service.title} delay={index * 100}>
-              <div className="card-hover group overflow-hidden rounded-2xl bg-white shadow-md shadow-slate-900/5">
-                <div className={`h-1.5 w-full ${service.topBar}`} />
-                <div className="p-8">
-                  <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-xl bg-accent/10 text-accent transition-colors duration-300 group-hover:bg-accent group-hover:text-white">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      strokeWidth={1.5}
-                      stroke="currentColor"
-                      className="h-6 w-6"
-                    >
-                      {service.icon}
-                    </svg>
-                  </div>
-                  <h3 className="mb-3 text-xl font-semibold text-navy">
-                    {service.title}
-                  </h3>
-                  <p className="text-navy/60">{service.description}</p>
-                </div>
-              </div>
-            </Reveal>
+        <div className="mt-16 grid gap-px border border-rule bg-rule md:grid-cols-3">
+          {SERVICES.map((service) => (
+            <div key={service.title} className="bg-white p-8 sm:p-10">
+              <h3 className="font-display text-xl font-bold tracking-[-0.02em] text-ink">
+                {service.title}
+              </h3>
+              <p className="prose-body mt-4 text-base">{service.description}</p>
+
+              <ul className="mt-6 flex flex-col gap-2">
+                {service.scope.map((item) => (
+                  <li
+                    key={item}
+                    className="font-display flex items-baseline gap-2.5 text-sm font-medium tracking-tight text-graphite"
+                  >
+                    <span aria-hidden="true" className="h-px w-3 shrink-0 translate-y-[-0.3em] bg-moss" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
           ))}
         </div>
       </div>

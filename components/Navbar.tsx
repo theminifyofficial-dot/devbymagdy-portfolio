@@ -1,12 +1,14 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
+import Wordmark from "./Wordmark";
 
 const NAV_LINKS = [
-  { label: "Services", href: "#services" },
-  { label: "Portfolio", href: "#portfolio" },
-  { label: "How It Works", href: "#how-it-works" },
-  { label: "Book a Call", href: "#booking" },
+  { label: "Work", href: "/#work" },
+  { label: "Services", href: "/#services" },
+  { label: "Process", href: "/#how-it-works" },
+  { label: "Contact", href: "/#contact" },
 ];
 
 export default function Navbar() {
@@ -16,52 +18,48 @@ export default function Navbar() {
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
     onScroll();
-    window.addEventListener("scroll", onScroll);
+    window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const handleLinkClick = () => setMenuOpen(false);
-
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-white/80 backdrop-blur-md shadow-md shadow-slate-900/5"
-          : "bg-transparent"
+      className={`fixed inset-x-0 top-0 z-50 transition-colors duration-200 ease-out-strong ${
+        scrolled ? "border-b border-rule bg-paper/90 backdrop-blur" : "bg-transparent"
       }`}
     >
-      <nav className="section-container flex h-20 items-center justify-between py-4">
-        <a href="#top" className="flex items-center">
-          <img
-            src="/logo.svg"
-            alt="devbymagdy"
-            className="h-9 w-auto sm:h-10"
-          />
-        </a>
+      <nav className="section-container flex h-20 items-center justify-between">
+        <Link href="/" aria-label="devbymagdy home" className="flex items-center">
+          <Wordmark className="text-lg sm:text-xl" />
+        </Link>
 
-        <ul className="hidden items-center gap-8 md:flex">
+        <ul className="hidden items-center gap-9 md:flex">
           {NAV_LINKS.map((link) => (
             <li key={link.href}>
-              <a
+              <Link
                 href={link.href}
-                className="text-sm font-medium text-navy/70 transition-colors duration-200 hover:text-navy"
+                className="font-display text-sm font-medium tracking-tight text-graphite transition-colors duration-200 ease-out-strong hover:text-ink"
               >
                 {link.label}
-              </a>
+              </Link>
             </li>
           ))}
         </ul>
 
-        <a href="#booking" className="btn-primary hidden md:inline-flex">
-          Book a Call
-        </a>
+        <Link
+          href="/#contact"
+          className="hidden bg-ink px-5 py-2.5 font-display text-sm font-semibold tracking-tight text-paper transition-colors duration-200 ease-out-strong hover:bg-moss md:inline-flex"
+        >
+          Start a project
+        </Link>
 
         <button
           type="button"
           onClick={() => setMenuOpen((open) => !open)}
-          className="flex h-10 w-10 items-center justify-center rounded-full text-navy transition-colors hover:bg-navy/5 md:hidden"
-          aria-label="Toggle menu"
+          className="flex h-10 w-10 items-center justify-center text-ink md:hidden"
+          aria-label={menuOpen ? "Close menu" : "Open menu"}
           aria-expanded={menuOpen}
+          aria-controls="mobile-nav"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -72,29 +70,29 @@ export default function Navbar() {
             className="h-6 w-6"
           >
             {menuOpen ? (
-              <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+              <path strokeLinecap="round" d="M6 18L18 6M6 6l12 12" />
             ) : (
-              <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5M3.75 17.25h16.5" />
+              <path strokeLinecap="round" d="M3.75 7.5h16.5M3.75 16.5h16.5" />
             )}
           </svg>
         </button>
       </nav>
 
       <div
-        className={`overflow-hidden transition-all duration-300 md:hidden ${
-          menuOpen ? "max-h-80 border-t border-slate-200" : "max-h-0"
-        }`}
+        id="mobile-nav"
+        hidden={!menuOpen}
+        className="border-t border-rule bg-paper md:hidden"
       >
-        <ul className="section-container flex flex-col gap-1 bg-white/95 py-4 backdrop-blur-md">
+        <ul className="section-container flex flex-col py-2">
           {NAV_LINKS.map((link) => (
-            <li key={link.href}>
-              <a
+            <li key={link.href} className="border-b border-rule last:border-0">
+              <Link
                 href={link.href}
-                onClick={handleLinkClick}
-                className="block rounded-lg px-3 py-3 text-base font-medium text-navy/80 transition-colors hover:bg-navy/5 hover:text-navy"
+                onClick={() => setMenuOpen(false)}
+                className="font-display block py-4 text-base font-medium tracking-tight text-ink"
               >
                 {link.label}
-              </a>
+              </Link>
             </li>
           ))}
         </ul>

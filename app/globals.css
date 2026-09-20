@@ -4,37 +4,84 @@
 
 html {
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
-  background-color: #f8fafc;
-  color: #0f172a;
+  background-color: #f7f6f2;
+  color: #000000;
+  text-rendering: optimizeLegibility;
 }
 
 ::selection {
-  background-color: #3b82f6;
+  background-color: #0e4f32;
   color: #ffffff;
+}
+
+:focus-visible {
+  outline: 2px solid #0e4f32;
+  outline-offset: 3px;
 }
 
 @layer components {
   .section-container {
-    @apply mx-auto max-w-6xl px-6 sm:px-8;
+    @apply mx-auto w-full max-w-6xl px-6 sm:px-8;
   }
 
+  /* Squared, not pill. Darkens on press so contrast holds at every state. */
   .btn-primary {
-    @apply inline-flex items-center justify-center rounded-full bg-accent px-8 py-3.5 text-sm font-semibold text-white shadow-lg shadow-accent/25 transition-all duration-300 hover:bg-accent-light hover:shadow-xl hover:shadow-accent/40 hover:-translate-y-0.5 active:translate-y-0;
+    @apply inline-flex items-center justify-center bg-moss px-7 py-3.5 font-display text-[0.9375rem] font-semibold tracking-tight text-white transition-colors duration-200 ease-out-strong hover:bg-moss-deep;
   }
 
   .btn-secondary {
-    @apply inline-flex items-center justify-center gap-2 text-sm font-semibold text-navy/70 transition-colors duration-300 hover:text-navy;
+    @apply inline-flex items-center justify-center border border-ink/20 px-7 py-3.5 font-display text-[0.9375rem] font-semibold tracking-tight text-ink transition-colors duration-200 ease-out-strong hover:border-ink hover:bg-ink hover:text-paper;
   }
 
-  .card-hover {
-    @apply transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-slate-900/10;
+  .display-xl {
+    @apply font-display font-bold leading-[0.95] tracking-[-0.035em] text-ink;
   }
 
-  .dot-grid {
-    background-image: radial-gradient(#0f172a1f 1px, transparent 1px);
-    background-size: 28px 28px;
+  .display-lg {
+    @apply font-display text-[2.5rem] font-bold leading-[1.02] tracking-[-0.03em] text-ink sm:text-[3.25rem];
+  }
+
+  .prose-body {
+    @apply font-body text-[1.0625rem] leading-[1.65] text-graphite;
+  }
+
+  .hairline {
+    @apply border-t border-rule;
+  }
+}
+
+/* One orchestrated entrance on the hero, staggered by custom property. */
+.stagger > * {
+  animation: riseIn 600ms cubic-bezier(0.23, 1, 0.32, 1) both;
+  animation-delay: calc(var(--i, 0) * 90ms);
+}
+
+@keyframes riseIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .stagger > *,
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }
