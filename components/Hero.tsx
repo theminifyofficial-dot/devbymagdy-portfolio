@@ -10,19 +10,11 @@ export default function Hero() {
               style={{ "--i": 0 } as React.CSSProperties}
               className="display-xl text-[2.75rem] sm:text-[3.75rem] lg:text-[4.25rem]"
             >
-              Helping growing brands sell more with websites built to convert.
+              Helping brands sell more with websites built to convert.
             </h1>
 
-            <p
-              style={{ "--i": 1 } as React.CSSProperties}
-              className="prose-body mt-7 max-w-prose text-[1.125rem]"
-            >
-              I am Mahmoud Magdy. I build every site myself, so you talk to the
-              person writing the code, and it ships in days rather than months.
-            </p>
-
             <div
-              style={{ "--i": 2 } as React.CSSProperties}
+              style={{ "--i": 1 } as React.CSSProperties}
               className="mt-10 flex flex-wrap items-center gap-4"
             >
               <a href="#contact" className="btn-primary">
@@ -34,7 +26,7 @@ export default function Hero() {
             </div>
 
             <p
-              style={{ "--i": 3 } as React.CSSProperties}
+              style={{ "--i": 2 } as React.CSSProperties}
               className="prose-body mt-10 text-sm"
             >
               Recent builds: YASSYS, Nordhome and HALSTEN.
@@ -42,7 +34,7 @@ export default function Hero() {
           </div>
 
           <div className="stagger">
-            <div style={{ "--i": 2 } as React.CSSProperties}>
+            <div style={{ "--i": 1 } as React.CSSProperties}>
               <HeroDemo />
             </div>
           </div>
