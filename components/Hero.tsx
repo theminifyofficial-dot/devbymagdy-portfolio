@@ -24,13 +24,6 @@ export default function Hero() {
                 See recent work
               </a>
             </div>
-
-            <p
-              style={{ "--i": 2 } as React.CSSProperties}
-              className="prose-body mt-10 text-sm"
-            >
-              Recent builds: YASSYS, Nordhome and HALSTEN.
-            </p>
           </div>
 
           <div className="stagger">
