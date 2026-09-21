@@ -22,7 +22,7 @@ export const PROJECTS: Project[] = [
     name: "YASSYS",
     category: "Shopify build and rebrand",
     summary:
-      "A custom Dawn theme for an Egyptian fashion label, live and taking orders.",
+      "A custom Dawn theme for a fashion label, live and taking orders.",
     problem:
       "The store needed to read as a real fashion label rather than a stock Shopify theme.",
     built:

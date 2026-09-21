@@ -8,7 +8,7 @@ export default function Work() {
       <div className="section-container">
         <h2 className="display-lg max-w-2xl">Recent work</h2>
         <p className="prose-body mt-4 max-w-prose">
-          Three storefronts, and what each one needed.
+          Three projects, and what each one needed.
         </p>
 
         <ul className="mt-14 flex flex-col">
@@ -41,7 +41,7 @@ export default function Work() {
                 </div>
 
                 <span className="font-display text-[0.9375rem] font-semibold tracking-tight text-moss underline decoration-2 underline-offset-4 transition-colors duration-200 ease-out-strong group-hover:text-ink">
-                  Read the case study
+                  View full project
                 </span>
               </Link>
             </li>

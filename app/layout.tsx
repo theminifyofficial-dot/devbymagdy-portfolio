@@ -21,12 +21,12 @@ const SITE_URL = "https://devbymagdy.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: "devbymagdy | Shopify storefronts for growing brands",
+  title: "devbymagdy | Websites and online stores for growing brands",
   description:
-    "Mahmoud Magdy builds custom Shopify themes and websites for brands in Cairo and abroad. One developer, direct contact, live in weeks.",
+    "Mahmoud Magdy builds custom websites and Shopify stores for growing brands. One developer, direct contact, live in days.",
   keywords: [
     "Shopify theme developer",
-    "Shopify developer Cairo",
+    "custom website developer",
     "custom Shopify theme",
     "devbymagdy",
     "Mahmoud Magdy",
@@ -34,18 +34,18 @@ export const metadata: Metadata = {
   authors: [{ name: "Mahmoud Magdy" }],
   alternates: { canonical: SITE_URL },
   openGraph: {
-    title: "devbymagdy | Shopify storefronts for growing brands",
+    title: "devbymagdy | Websites and online stores for growing brands",
     description:
-      "Custom Shopify themes and websites for brands that need to launch, not wait months.",
+      "Custom websites and online stores for brands that need to launch, not wait months.",
     url: SITE_URL,
     siteName: "devbymagdy",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "devbymagdy | Shopify storefronts for growing brands",
+    title: "devbymagdy | Websites and online stores for growing brands",
     description:
-      "Custom Shopify themes and websites for brands that need to launch, not wait months.",
+      "Custom websites and online stores for brands that need to launch, not wait months.",
   },
   robots: { index: true, follow: true },
 };

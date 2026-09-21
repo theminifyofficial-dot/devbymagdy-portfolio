@@ -10,16 +10,15 @@ export default function Hero() {
               style={{ "--i": 0 } as React.CSSProperties}
               className="display-xl text-[2.75rem] sm:text-[3.75rem] lg:text-[4.25rem]"
             >
-              Shopify storefronts for brands that have outgrown their theme.
+              Helping growing brands sell more with websites built to convert.
             </h1>
 
             <p
               style={{ "--i": 1 } as React.CSSProperties}
               className="prose-body mt-7 max-w-prose text-[1.125rem]"
             >
-              I am Mahmoud Magdy, a developer in Cairo. I build the storefront
-              myself, so you talk to the person writing the code and the work
-              ships in weeks instead of months.
+              I am Mahmoud Magdy. I build every site myself, so you talk to the
+              person writing the code, and it ships in days rather than months.
             </p>
 
             <div

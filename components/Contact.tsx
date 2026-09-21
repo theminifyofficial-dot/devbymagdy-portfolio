@@ -53,12 +53,6 @@ export default function Contact() {
                 </dd>
               </div>
 
-              <div className="hairline py-5">
-                <dt className="font-display text-sm font-semibold tracking-tight text-ink">
-                  Based in
-                </dt>
-                <dd className="prose-body mt-1">Cairo, Egypt</dd>
-              </div>
             </dl>
           </div>
 

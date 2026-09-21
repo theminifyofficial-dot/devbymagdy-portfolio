@@ -23,7 +23,7 @@ export default function Footer() {
           <div>
             <Wordmark className="text-lg" />
             <p className="prose-body mt-4 max-w-xs text-sm">
-              Custom Shopify themes and websites, built in Cairo.
+              Custom websites and online stores, built end to end.
             </p>
           </div>
 
