@@ -6,6 +6,7 @@ export default function HeroDemo() {
       <PhoneDemo
         src="/work/yassys-demo.mp4"
         poster="/work/yassys-poster.jpg"
+        caption=""
         align="start"
       />
     </div>
